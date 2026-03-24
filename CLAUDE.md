@@ -20,6 +20,10 @@ This is a Next.js 16 app using the **App Router** (`src/app/`). All routes, layo
 
 **Stack:** Next.js 16, React 19, TypeScript, Tailwind CSS 4.
 
+## Documentation
+
+ALWAYS consult the `/doc` directory before any implementation to understand existing patterns, conventions, and best practices used in this project. This is required, not optional.
+
 ## Next.js Version Warning
 
 This project uses Next.js 16, which has breaking changes from prior versions. Before writing any Next.js-specific code (routing, data fetching, middleware, etc.), consult the bundled docs:
