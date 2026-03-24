@@ -13,7 +13,7 @@ export default async function DashboardPage({
 
   const { date: dateParam, tz: tzParam } = await searchParams;
   const tzOffset = tzParam ? parseInt(tzParam) : 0;
-  const dateStr = dateParam ?? new Date(Date.now() - tzOffset * 60 * 1000).toISOString().slice(0, 10);
+  const dateStr = dateParam ?? new Date(+new Date() - tzOffset * 60 * 1000).toISOString().slice(0, 10);
 
   const workoutList = await getWorkoutsForDate(userId, dateStr, tzOffset);
 
