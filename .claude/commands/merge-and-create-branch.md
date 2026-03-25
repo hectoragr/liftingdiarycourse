@@ -1,0 +1,1 @@
+commit any changes in the current branch and provide a suitable commit message on the code changes. then merge the current branch into $1 and resolve any issues off the back of that merge. then create a new branch called $2
