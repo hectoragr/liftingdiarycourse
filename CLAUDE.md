@@ -24,6 +24,8 @@ This is a Next.js 16 app using the **App Router** (`src/app/`). All routes, layo
 
 ALWAYS consult the `/doc` directory before any implementation to understand existing patterns, conventions, and best practices used in this project. This is required, not optional.
 
+- `/doc/routing.md` — Routing architecture: all app routes live under `/dashboard`, protected by middleware
+
 ## Next.js Version Warning
 
 This project uses Next.js 16, which has breaking changes from prior versions. Before writing any Next.js-specific code (routing, data fetching, middleware, etc.), consult the bundled docs:
