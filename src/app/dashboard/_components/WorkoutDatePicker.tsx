@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
@@ -34,6 +34,15 @@ function formatDate(date: Date): string {
 export function WorkoutDatePicker({ dateStr }: { dateStr: string }) {
   const [open, setOpen] = useState(false);
   const router = useRouter();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (!searchParams.get("tz")) {
+      const tz = new Date().getTimezoneOffset();
+      const localDate = new Date(+new Date() - tz * 60 * 1000).toISOString().slice(0, 10);
+      router.replace(`/dashboard?date=${localDate}&tz=${tz}`);
+    }
+  }, [router, searchParams]);
 
   const localDate = new Date(`${dateStr}T00:00:00`);
 

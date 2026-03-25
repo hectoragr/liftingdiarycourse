@@ -1,4 +1,5 @@
 import { auth } from "@clerk/nextjs/server";
+import Link from "next/link";
 import { format } from "date-fns";
 import { getWorkoutsForDate } from "@/data/workouts";
 import { WorkoutDatePicker } from "./_components/WorkoutDatePicker";
@@ -29,8 +30,14 @@ export default async function DashboardPage({
           </p>
         </div>
 
-        <div className="mb-6">
+        <div className="mb-6 flex items-center justify-between gap-4">
           <WorkoutDatePicker dateStr={dateStr} />
+          <Link
+            href={`/dashboard/workout/new?date=${dateStr}`}
+            className="inline-flex h-8 shrink-0 items-center justify-center rounded-lg bg-primary px-2.5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/80"
+          >
+            New workout
+          </Link>
         </div>
 
         <div className="flex flex-col gap-3">
